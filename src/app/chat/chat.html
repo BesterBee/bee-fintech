@@ -1,0 +1,37 @@
+<!-- Floating launcher button -->
+<button class="launcher" (click)="toggle()" [class.hidden]="open()">
+  💬
+</button>
+
+<!-- Chat panel -->
+@if (open()) {
+  <div class="panel">
+    <div class="header">
+      <span>Assistant</span>
+      <button class="close" (click)="toggle()">✕</button>
+    </div>
+
+    <div class="messages" #scrollBox>
+      @if (messages().length === 0) {
+        <div class="empty">Hi 👋 How can I help you today?</div>
+      }
+      @for (msg of messages(); track $index) {
+        <div class="msg" [class.user]="msg.role === 'user'" [class.bot]="msg.role === 'assistant'">
+          {{ msg.content }}
+          @if (msg.role === 'assistant' && !msg.content && loading()) {
+            <span class="dots">…</span>
+          }
+        </div>
+      }
+    </div>
+
+    <div class="input-row">
+      <input
+        [(ngModel)]="input"
+        (keydown.enter)="send()"
+        [disabled]="loading()"
+        placeholder="Type a message..." />
+      <button (click)="send()" [disabled]="loading() || !input.trim()">➤</button>
+    </div>
+  </div>
+}

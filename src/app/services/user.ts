@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { User } from './auth';
 
 @Injectable({
   providedIn: 'root',
 })
-export class User {
+export class UserService {
   private USER_KEY = 'beepay_users';
   
   // Helper method to get all registered users from localStorage
