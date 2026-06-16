@@ -8,3 +8,70 @@
 body {
   background: #f4f6f9;
 }
+
+.app-header {
+  background: white;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.main {
+  padding-top: 72px;
+}
+
+/* Layout for authenticated app with left sidebar */
+.app-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 24px auto;
+  width: calc(100% - 48px);
+}
+
+.sidebar {
+  height: calc(100vh - 72px);
+  position: sticky;
+  top: 72px;
+}
+
+.content-area {
+  min-height: calc(100vh - 72px);
+}
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .app-header {
+    height: 56px;
+  }
+
+  .main {
+    padding-top: 56px;
+  }
+
+  .app-layout {
+    grid-template-columns: 1fr;
+    margin: 12px;
+    width: calc(100% - 24px);
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

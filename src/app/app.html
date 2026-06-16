@@ -1,10 +1,20 @@
 
-<main class="main">
-  <div class="content">
-   <app-navbar></app-navbar>
+<header class="app-header">
+  <div class="dashboard-header">
+    <h2>BeePay Dashboard</h2>
+  </div>
+</header>
 
+<main class="main">
+  <div class="app-layout">
+    @if (isAuthenticated) {
+      <aside class="sidebar">
+        <app-navbar></app-navbar>
+      </aside>
+    }
+
+    <section class="content-area">
+      <router-outlet />
+    </section>
   </div>
 </main>
-
-
-<router-outlet />

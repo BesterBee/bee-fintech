@@ -1,16 +1,39 @@
 <div class="dashboard">
-  <h2>BeePay Dashboard</h2>
+  <div class="dashboard-header">
+    <h2>BeePay Dashboard</h2>
+  </div>
 
-  <div class="grid">
-    <div class="card">
+  <div class="summary">
+    <div class="summary-card balance">
       <h3>Wallet Balance</h3>
-      <p>$0.00</p>
+      <p class="amount">$0.00</p>
+      <p class="sub">Available balance</p>
     </div>
 
-    <div class="card">
-      <h3>Recent Transactions</h3>
-      <p>No transactions yet</p>
+    <div class="summary-card transactions">
+      <h3>Monthly Spend</h3>
+      <p class="amount">$0.00</p>
+      <p class="sub">This month</p>
+    </div>
+
+    <div class="summary-card contacts">
+      <h3>Saved Contacts</h3>
+      <p class="amount">0</p>
+      <p class="sub">People you pay</p>
     </div>
   </div>
+
+  <div class="main-grid">
+    <section class="recent">
+      <h3>Recent Transactions</h3>
+      <div class="placeholder">No transactions yet</div>
+    </section>
+
+    <aside class="activity">
+      <h3>Activity Feed</h3>
+      <div class="placeholder">No activity</div>
+    </aside>
+  </div>
+
   <app-chat></app-chat>
 </div>

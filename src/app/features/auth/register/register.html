@@ -2,13 +2,25 @@
   <div class="auth-card">
     <h2>Create Account</h2>
 
-    <form>
-      <input placeholder="First Name" />
-      <input placeholder="Last Name" />
-      <input placeholder="Email" />
-      <input placeholder="Password" type="password" />
+    @if (successMessage) {
+      <p class="success">{{ successMessage }}</p>
+    }
 
-      <button>Register</button>
+    <form (ngSubmit)="onRegister()">
+      <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="First Name" required />
+      <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="Last Name" required />
+      <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required />
+      <input type="password" name="password" [(ngModel)]="password" placeholder="Password" required />
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+      <button type="submit">Register</button>
     </form>
+
+    <p class="auth-link">
+      Already have an account? <a routerLink="/login">Login</a>
+    </p>
   </div>
 </div>

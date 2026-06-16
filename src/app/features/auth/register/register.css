@@ -45,8 +45,52 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
 .auth-card button:hover {
   background: #162c66;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 4px;
+  padding: 8px;
+  background: #fee2e2;
+  border-radius: 6px;
+  border-left: 3px solid #dc2626;
+}
+
+.success {
+  color: #059669;
+  font-size: 14px;
+  padding: 8px;
+  background: #d1fae5;
+  border-radius: 6px;
+  border-left: 3px solid #059669;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-link a {
+  color: #1e3a8a;
+  text-decoration: none;
+  font-weight: 600;
+  background: #f3f4f6;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: background 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.auth-link a:hover {
+  background: #e5e7eb;
 }
